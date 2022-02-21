@@ -29,7 +29,7 @@ function draw() {
   }
 }
 
-function speak(){
+function speak() {
     var synth = window.speechSynthesis;
 
     var utterThis = new SpeechSynthesisUtterance(speak_data);
