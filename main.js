@@ -1,35 +1,29 @@
 x = 0;
 y = 0;
-
 draw_apple = "";
 
 var SpeechRecognition = window.webkitSpeechRecognition;
   
 var recognition = new SpeechRecognition();
 
-function start()
-{
+function start() {
   document.getElementById("status").innerHTML = "System is now listening";  
   recognition.start();
-} 
+}
  
-recognition.onresult = function(event) {
-
- console.log(event); 
-
- content = event.results[0][0].transcript;
-
-    document.getElementById("status").innerHTML = "The speech has been recognized: " + content; 
+recognition.onresult = function(action) {
+  console.log(action); 
+  var content = action.results[0][0].transcript;
+    document.getElementById("status").innerHTML = "Your speech has been recognized: " + content; 
 
 }
 
 function setup() {
- 
+  canvas = createCanvas(900, 600);
 }
 
 function draw() {
-  if(draw_apple == "set")
-  {
+  if(draw_apple == "set") {
     document.getElementById("status").innerHTML = to_number + " Apples drawn";
     draw_apple = "";
   }
