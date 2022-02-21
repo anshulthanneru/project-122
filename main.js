@@ -19,7 +19,7 @@ recognition.onresult = function(action) {
 }
 
 function setup() {
-  canvas = createCanvas(900, 600);
+  canvas = createCanvas(9000, 6000);
 }
 
 function draw() {
